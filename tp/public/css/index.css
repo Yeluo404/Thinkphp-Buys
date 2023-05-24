@@ -1,0 +1,256 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+.hd-flex{
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-between;
+}
+
+.hd-ul{
+    display: flex;
+}
+
+.hd-items{
+    text-align: center;
+    min-width: 120px;
+    line-height: 58px;
+}
+
+
+.carousel{
+    aspect-ratio: 6/2;
+}
+
+.car-items{
+    width: 100%;
+    position: absolute;
+    aspect-ratio: 6/2;
+    opacity: 0;
+    transition: all .6s;
+}
+.car-items:nth-child(1){
+    opacity: 1;
+    transition: all .6s;
+}
+.car-items img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.bd-con{
+    margin-top: 35px;
+}
+.bd-title{
+    font-weight: 600;
+}
+.bd-title::before{
+    height: 6px;
+    width: 88px;
+    position: absolute;
+    background-color: #c8000b;
+    border-radius: 15px;
+    content: '';
+    margin-top: 52px;
+}
+.shop-con{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.shop-items{
+    transition: all .5s;
+    margin: 40px 0;
+    padding: 15px 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 3px 3px 23px rgba(0, 0, 0, 0.09);
+}
+.shop-items:hover{
+    transition: all .5s;
+    transform: translateY(-10px);
+    box-shadow: 3px 3px 23px rgba(0, 0, 0, 0.28);
+}
+.shop-con img{
+    width: 262px;
+    border-radius: 13px;
+}
+.bd-content{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.bd-txt{
+    line-height: 52px;
+    margin-left: 77px;
+}
+.bd-txt0{
+    line-height: 41px;
+    margin-right: 77px;
+}
+
+
+
+footer{
+    background-color: #f2f2f2;
+}
+.ft{
+    padding-bottom: 15px;
+}
+.ft-logo{
+    width: 200px;
+}
+.ft-flex{
+    padding: 44px 0;
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.ft-flex div{
+    min-width: 300px;
+}
+.ft-flex div ul li:nth-child(1){
+    font-size: 27px;
+    font-weight: 500;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+}
+.goods-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+.goods-title::before{
+    margin-top: 33px;
+    height: 4px;
+}
+.pri-txt{
+    display: block;
+    font-weight: 800;
+    font-size: 23px;
+    color: #c8000b;
+    text-align: right;
+    padding: 0 12px;
+}
+.shopname-txt{
+    display: block;
+    width: 225px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 20px 0;
+}
+.news-flex{
+    display: flex;
+    margin: 50px 0;
+}
+.news-img{
+    padding: 0 30px;
+}
+.news-txt{
+    width: 590px;
+}
+.news-txt::before{
+    content: '';
+    height: 2px;
+    width: 40px;
+    background-color: #c8000b;
+    position: relative;
+    display: block;
+    top: 40px;
+}
+.news-con-txt div{
+    padding: 20px 0;
+}
+
+.rows{
+    display: flex;
+    justify-content: space-around;
+}
+.rows-items{
+    height: 300px;
+    width: 400px;
+    background-color: #f2f2f2f2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.dateil-flex{
+    display: flex;
+}
+.price-txt{
+    font-size: 33px;
+    font-weight: 500;
+}
+.join-cart{
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 10px 20px;
+    position: relative;
+    top: 62%;
+    cursor: pointer;
+}
+
+
+.cart-img{
+    width: 300px;
+    padding: 20px 30px;
+}
+.cart-name{
+    display: block;
+    width: 400px;
+    padding-right: 77px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cart-price{
+    width: 150px;
+}
+.quantity{
+    width: 200px;
+}
+.mintotal{
+    width: 150px;
+}
+thead{
+    line-height: 88px;
+    border-bottom: 1px solid #989898;
+}
+.remove{
+    cursor: pointer;
+    font-size: 33px;
+}
+.num-box{
+    display: flex;
+}
+.sub,.add{
+    font-size: 22px;
+    background-color: #8888;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+.numsss{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 53px;
+    border: 1px solid #000;
+}

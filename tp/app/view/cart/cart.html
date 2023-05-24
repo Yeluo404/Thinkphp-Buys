@@ -1,0 +1,121 @@
+{include file='common/header' /}
+
+
+<div>
+    <div class="container">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>&nbsp;</th>
+                        <th>商品名称</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>小计</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                {foreach name='qqqq' item='v'}
+                <tbody class="body" id="body{$v.id}" data-json="{:urlencode(json_encode($v))}">
+                    <tr>
+                        <td><img class="cart-img" src="/images/{$v.path}" alt=""></td>
+                        <td><a class="cart-name" href="">{$v.shopname}</a></td>
+                        <td class="cart-price price{$v.id}">￥{$v.price}</td>
+                        <td class="quantity">
+                            <div class="num-box">
+                                <div class="sub" id="{$v.id}">-</div>
+                                <div class="numsss bbbb{$v.id}">{$v.cart_num}</div>
+                                <div class="add" id="{$v.id}">+</div>
+                            </div>
+                        </td>
+                        <td class="mintotal mmmm{$v.id}">￥{$v.price*$v.cart_num}</td>
+                        <td><span class="remove" id="{$v.id}">X</span></td>
+                    </tr>
+                </tbody>
+                {/foreach}
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="">总计: <p class="maxtotal"></p>
+                        </td>
+                        <td class="sub"><a href="{:url('/order/index')}">提交订单</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $(document).ready(function () {
+        let tototal = function () {
+            let cartTotal = 0
+            $('.mintotal').each(function () {
+                $this = parseFloat($(this).text().replace(/￥/g, ''));
+                cartTotal += $this;
+            });
+            $('.maxtotal').text('￥' + cartTotal.toFixed(1));
+        };
+        tototal();
+        $('.add').click(function (id) {
+            $.ajax({
+                url: '/cart/call',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    name: 'add',
+                    id: id['currentTarget']['id']
+                },
+                success: function (res) {
+                    $('.bbbb' + id['currentTarget']['id']).text(res[0]['num']);
+                    $('.mmmm' + id['currentTarget']['id']).text('￥' + ((res[0]['num']) * (($('.price' + id['currentTarget']['id'])).html().replace(/￥/g, ''))).toFixed(1));
+                    tototal();
+                },
+                error: function (err) {
+                    console.log('error');
+                }
+            });
+        });
+        $('.sub').click(function (id) {
+            $.ajax({
+                url: '/cart/call',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    name: 'sub',
+                    id: id['currentTarget']['id']
+                },
+                success: function (res) {
+                    $('.bbbb' + id['currentTarget']['id']).text(res[0]['num']);
+                    $('.mmmm' + id['currentTarget']['id']).text('￥' + (res[0]['num'] * (($('.price' + id['currentTarget']['id'])).html().replace(/￥/g, ''))).toFixed(1));
+                    tototal();
+                },
+                error: function (err) {
+                    console.log('error');
+                }
+            });
+        });
+        $('.remove').click(function (id) {
+            $.ajax({
+                url: '/cart/call',
+                type: 'POST',
+                dataType: 'json',
+                data: {
+                    name: 'remove',
+                    id: id['currentTarget']['id']
+                },
+                success: function (res) {
+                    $('#body' + id['currentTarget']['id']).remove();
+                    tototal();
+                },
+                error: function (err) {
+                    console.log('error');
+                }
+            });
+        });
+    });
+</script>
+{include file='common/footer' /}·

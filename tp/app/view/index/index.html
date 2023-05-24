@@ -1,0 +1,68 @@
+{include file='common/header' /}
+
+<div>
+    <div class="carousel">
+        <div class="car-items">
+            <img src="/images/carouselImg/one.jpg" alt="">
+        </div>
+        <div class="car-items">
+            <img src="/images/carouselImg/two.jpg" alt="">
+        </div>
+        <div class="car-items">
+            <img src="/images/carouselImg/three.jpg" alt="">
+        </div>
+        <div class="car-items">
+            <img src="/images/carouselImg/four.png" alt="">
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container bd-con">
+        <h1 class="bd-title">产品展示</h1>
+        <div class="shop-con">
+            {foreach name="goodsdata" item="v"}
+            <div class="shop-items">
+                <a href="{:url('/goods/dateil',['id'=>$v.id])}"><img src="/images/{$v.path}" alt=""></a>
+            </div>
+            {/foreach}
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container bd-con">
+        <h1 class="bd-title">公司简介</h1>
+        <div class="bd-content">
+            <div>
+                <video src="/video/video01.mp4" autoplay muted controls width="670px"></video>
+            </div>
+            <div class="bd-txt">
+                浙江五芳斋实业股份有限公司主要从事以糯米食品为主导的食品研发、生产和销售。公司在传承民族饮食文化的基础上不断创新，对明清两代极具盛名的“嘉湖细点”的制作工艺进行现代化改造，已形成以粽子为主导，集月饼、汤圆、糕点、蛋制品、其他米制品等食品为一体的产品群，拥有黑龙江优质稻米基地和江西野生箬叶基地，在嘉兴、成都建立了两大食品生产配送基地,并建立起覆盖全国的商贸、连锁门店、电商的全渠道营销网络。五芳斋号称“江南粽子大王"。
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container bd-con">
+        <h1 class="bd-title">历程发展</h1>
+        <div class="bd-content">
+            <div class="bd-txt0">
+                “五芳斋”始于1921年。
+               <br/>2004年被国家商标局认定为中国驰名商标。
+               <br/>2021年6月，证监会网站挂出五芳斋的上市预披露文件，五芳斋将在A股上市。
+               <br/>2022年1月13日，浙江五芳斋实业股份有限公司将首发上会。
+               <br/>2022年3月29日，百年老字号五芳斋正式宣布引入“元宇宙”概念，重磅发布“五芳影业”首位虚拟艺人——五糯糯。
+               <br/>2022年8月22日，五芳斋启动会新股申购，发行总数2519万股，网上发行1000万股，发行价格34.32元/股。
+               <br/>2022年8月31日，五芳斋登陆A股市场，在上海证券交易所主板上市。
+            </div>
+            <div>
+                <img src="/images/carouselImg/two.jpg" width="670px" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+{include file='common/footer' /}
+<script src="/js/carousel.js"></script>

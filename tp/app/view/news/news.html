@@ -1,0 +1,22 @@
+{include file='common/header' /}
+
+<div>
+    <div class="container bd-con">
+        <h1 class="bd-title goods-title">
+            <a href="{:url('/index/index')}">首页</a> &nbsp;&gt;&nbsp;
+            新闻动态
+        </h1>
+        {foreach name="newsdata" item="v"}
+        <div class="news-flex">
+            <div class="news-img"><img src="/images/{$v.thumb}" width="600px" alt=""></div>
+            <div class="news-con-txt">
+                <div><a href="">{$v.name}</a></div>
+                <div class="shopname-txt news-txt">{$v.content}</div>
+                <div>{$v.add_time|date='m-d'}</div>
+            </div>
+        </div>
+        {/foreach}
+    </div>
+</div>
+
+{include file='common/footer' /}

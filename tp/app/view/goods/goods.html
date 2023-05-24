@@ -1,0 +1,22 @@
+{include file='common/header' /}
+
+<div>
+    <div class="container bd-con">
+        <h1 class="bd-title goods-title">
+            <a href="{:url('/index/index')}">首页</a> &nbsp;&gt;&nbsp;
+            产品展示
+        </h1>
+        <div class="shop-con">
+            {foreach name="goodsdata" item="v"}
+            <div class="shop-items">
+                <a href="{:url('/goods/dateil',['id'=>$v.id])}">
+                    <img src="/images/{$v.path}" alt="">
+                    <span class="shopname-txt">{$v.shopname}</span>
+                    <span class="pri-txt">￥{$v.price}</span></a>
+            </div>
+            {/foreach}
+        </div>
+    </div>
+</div>
+
+{include file='common/footer' /}
